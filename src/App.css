@@ -1,20 +1,21 @@
+/* App.css */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .card-container {
   display: flex;
-  gap: 10px; /* Espaço entre os cards */
-  justify-content: space-between; /* Alinha os cards ao longo do eixo horizontal */
-  padding: 10px; /* Adiciona um pouco de espaço ao redor dos cards */
-}
-
-.main-container{
-  width: 90vh;
-  margin: 0 2vh 0 2vh;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* flex-wrap: wrap; */
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 20px;
 }
