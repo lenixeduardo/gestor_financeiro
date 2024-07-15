@@ -4,8 +4,25 @@ import { UilMoneyBill, UilBill, UilWallet } from '@iconscout/react-unicons';
 import Nav from './components/Nav';
 import Title from './components/Title';
 import Card from './components/Card';
+import Resume from './components/Resume';
 
 function App() {
+  const transactions = [
+    { descricao: 'Padaria', valor: 30, categoria: 'saida' },
+    { descricao: 'Mercado', valor: 300, categoria: 'saida' },
+    { descricao: 'Salário', valor: 5000, categoria: 'entrada' },
+  ];
+
+  const totalReceitas = transactions
+    .filter(transaction => transaction.categoria === 'entrada')
+    .reduce((acc, transaction) => acc + transaction.valor, 0);
+
+  const totalGastos = transactions
+    .filter(transaction => transaction.categoria === 'saida')
+    .reduce((acc, transaction) => acc + transaction.valor, 0);
+
+  const saldo = totalReceitas - totalGastos;
+
   return (
     <div className="app">
       <Nav />
@@ -18,24 +35,26 @@ function App() {
             receita
             Icon={UilMoneyBill}
             title="Receitas"
-            amount="R$ 63 618,00"
+            amount={`R$ ${totalReceitas.toFixed(2)}`}
             monthlyAverage="Média Mensal: R$ 5 302"
           />
           <Card 
             gastos
             Icon={UilBill}
             title="Gastos"
-            amount="R$ 25 000,00"
+            amount={`R$ ${totalGastos.toFixed(2)}`}
             monthlyAverage="Média Mensal: R$ 2 100"
           />
           <Card 
             saldoTotal
             Icon={UilWallet}
             title="Saldo"
-            amount="R$ 38 618,00"
+            amount={`R$ ${saldo.toFixed(2)}`}
             monthlyAverage="Média Mensal: R$ 3 202"
           />
         </div>
+        <Title>Extrato </Title>
+        <Resume transactions={transactions} />
       </main>
     </div>
   );
