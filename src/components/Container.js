@@ -10,9 +10,9 @@ const Container = styled.div`
   box-sizing: border-box;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   background-color: ${(props) => {
-    if (props.receita) return '#36D3B8';
-    if (props.gastos) return '#FD6D6A';
-    if (props.saldoTotal) return '#364C52';
+    if (props.$receita) return '#36D3B8';
+    if (props.$gastos) return '#FD6D6A';
+    if (props.$saldoTotal) return '#364C52';
     return '#364C52';
   }};
 `;
