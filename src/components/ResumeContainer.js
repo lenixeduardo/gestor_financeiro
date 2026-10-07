@@ -3,14 +3,13 @@ import styled from 'styled-components';
 const ResumeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1vw;
-  color: white;
-  border-radius: 8px;
+  gap: 16px;
+  border-radius: 12px;
   padding: 20px;
-  width: 50vw; 
-  height: 200px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 `;
 
 export default ResumeContainer;
