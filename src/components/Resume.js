@@ -14,13 +14,13 @@ function Resume({ transactions, onRemove }) {
       {transactions.map((transaction) => (
         <ResumeDiv key={transaction.id}>
           <div>
-            <ResumeContent categoria={transaction.categoria}>
+            <ResumeContent $categoria={transaction.categoria}>
               {transaction.descricao}
             </ResumeContent>
             <small>{transaction.data}</small>
           </div>
           <div className="resume-actions">
-            <ResumeContent categoria={transaction.categoria}>
+            <ResumeContent $categoria={transaction.categoria}>
               {transaction.categoria === 'saida' ? '-' : '+'}
               {formatCurrency(transaction.valor)}
             </ResumeContent>
