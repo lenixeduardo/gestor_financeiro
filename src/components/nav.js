@@ -1,67 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
-import { UilUserCircle } from '@iconscout/react-unicons'
+import { UilWallet } from '@iconscout/react-unicons';
 
-const NavMenu = styled.div`
-height: 8vh; 
-background-color: #F9FDFF;
-display: flex;
-justify-content: space-between;
-
-width: 98%;
-position: relative;
-`
-
-const Logo = styled.img`
-width: 200px;
-height: auto;
-`
-
-
-
-const Login = styled.div`
-display: flex;
-align-items: center;
-gap: 10px;
-`
-
-const Icon = styled(UilUserCircle)`
-  width: 35px;
-  height: 35px;
- color: #36D3B8;
-  
-`;
-
-
-const Text = styled.h2`
- font-size: 1.8rem;
- font-family: "Play", Sans-serif;
- font-weight: normal;
-`
-
-
-const Divider = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
+const NavMenu = styled.nav`
+  min-height: 72px;
+  background-color: #f9fdff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 4px; /* Espessura da listra */
-  background-color: #3498db; /* Cor azul */
+  padding: 0 4%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dbe7ec;
 `;
 
+const Brand = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #263b42;
+  font-size: 1.15rem;
+  font-weight: 700;
+`;
 
+const Status = styled.span`
+  color: #60757d;
+  font-size: 0.9rem;
+`;
 
-const Nav = () => {
-    return (
-      <NavMenu>
-        <Logo src={'https://moneysuite.com.br/wp-content/uploads/2022/09/Logo-moneysuite.svg'} alt="logotipo" />
-        <Login>
-          <Icon />
-          <Text>Login</Text>
-        </Login>
-        <Divider />
-      </NavMenu>
-    );
-  };
-  
-  export default Nav;
+const Nav = () => (
+  <NavMenu aria-label="Navegação principal">
+    <Brand>
+      <UilWallet size="28" color="#36D3B8" />
+      Gestor Financeiro
+    </Brand>
+    <Status>Dados salvos neste dispositivo</Status>
+  </NavMenu>
+);
+
+export default Nav;
