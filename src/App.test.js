@@ -1,8 +1,24 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+beforeEach(() => {
+  window.localStorage.clear();
+});
+
+test('renders the financial dashboard with calculated totals', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  expect(screen.getByText('Minhas Finanças Pessoais')).toBeInTheDocument();
+  expect(screen.getByText('Padaria')).toBeInTheDocument();
+  expect(screen.getByText('R$ 5.000,00')).toBeInTheDocument();
+  expect(screen.getByText('R$ 330,00')).toBeInTheDocument();
+  expect(screen.getByText('R$ 4.670,00')).toBeInTheDocument();
+});
+
+test('renders a form for new transactions', () => {
+  render(<App />);
+
+  expect(screen.getByLabelText('Descrição')).toBeInTheDocument();
+  expect(screen.getByLabelText('Valor')).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Adicionar' })).toBeInTheDocument();
 });
