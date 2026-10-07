@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './App.css';
 import { UilMoneyBill, UilBill, UilWallet } from '@iconscout/react-unicons';
-import Nav from './components/Nav';
+import Nav from './components/nav';
 import Title from './components/Title';
 import Card from './components/Card';
 import Resume from './components/Resume';
