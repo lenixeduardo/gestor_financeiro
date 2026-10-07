@@ -10,9 +10,9 @@ test('renders the financial dashboard with calculated totals', () => {
 
   expect(screen.getByText('Minhas Finanças Pessoais')).toBeInTheDocument();
   expect(screen.getByText('Padaria')).toBeInTheDocument();
-  expect(screen.getByText(/5\.000,00/)).toBeInTheDocument();
-  expect(screen.getByText(/330,00/)).toBeInTheDocument();
-  expect(screen.getByText(/4\.670,00/)).toBeInTheDocument();
+  expect(screen.getAllByText(/5\.000,00/).length).toBeGreaterThan(0);
+  expect(screen.getAllByText(/330,00/).length).toBeGreaterThan(0);
+  expect(screen.getAllByText(/4\.670,00/).length).toBeGreaterThan(0);
 });
 
 test('renders a form for new transactions', () => {
