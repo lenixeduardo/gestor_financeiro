@@ -1,28 +1,108 @@
-/* App.css */
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  background: #f7fafb;
+  color: #263b42;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
+  width: min(1120px, 92%);
+  margin: 0 auto 48px;
 }
 
 .card-container {
-  display: flex;
-  /* flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-  justify-content: space-between;
   margin-top: 20px;
 }
 
-.resume-container {
+.transaction-section {
+  margin: 32px 0 20px;
+  padding: 24px;
+  border: 1px solid #dbe7ec;
+  border-radius: 12px;
+  background: white;
+}
+
+.transaction-section h2 {
+  margin-top: 0;
+}
+
+.transaction-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.transaction-form label {
   display: flex;
   flex-direction: column;
-  width: 50vw;
-  margin-top: 2vh;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.transaction-form input,
+.transaction-form select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #cbd8dd;
+  border-radius: 8px;
+  padding: 0 10px;
+  background: white;
+}
+
+.transaction-form button,
+.remove-transaction {
+  min-height: 42px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.transaction-form button {
+  background: #263b42;
+  color: white;
+  font-weight: 700;
+}
+
+.form-error {
+  margin-bottom: 0;
+  color: #b42318;
+}
+
+.resume-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.remove-transaction {
+  min-height: 34px;
+  background: #eef3f5;
+  color: #526970;
+}
+
+@media (max-width: 900px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .transaction-form {
+    grid-template-columns: 1fr;
+  }
 }
