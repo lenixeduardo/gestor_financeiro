@@ -8,7 +8,7 @@ import MonthlyAverage from './MonthlyAverage';
 
 function Card({ Icon, title, amount, monthlyAverage, receita, gastos, saldoTotal }) {
   return (
-    <Container receita={receita} gastos={gastos} saldoTotal={saldoTotal}>
+    <Container $receita={receita} $gastos={gastos} $saldoTotal={saldoTotal}>
       <IconContainer>
         <Icon size="50" color="white" />
       </IconContainer>
